@@ -25,7 +25,7 @@ document
 .addEventListener('submit', formSubmitcontact);
 
 
-
+// on member registration
 function formSubmit(e) {
 
             e.preventDefault();
@@ -57,7 +57,7 @@ function formSubmit(e) {
 
 }
 
-
+// on dropping a message
 function formSubmitcontact(e) {
     
     e.preventDefault();
@@ -87,3 +87,18 @@ function formSubmitcontact(e) {
 
 }
 
+
+function readData(){
+    docRef_message.on("value", function(snapshot) {
+
+        snapshot.forEach(function(childSnapshot) {
+            var key = childSnapshot.key;
+            var childData = childSnapshot.val();              // childData will be the actual contents of the child
+            var name_val = childSnapshot.val().name;
+            console.log(name_val);
+        })
+
+      }, function (errorObject) {
+        console.log("The read failed: " + errorObject.code);
+      });
+}
