@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMIN</title>
+    <!-- links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- ------- -->
+    <!-- scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> -->
+    <!-- ------- -->
+</head>
+<body>
+
+    <section>
+        <!-- Here goes navbar -->
+     <nav id="nav" class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+		<a class="navbar-brand text-warning">ASFE</i></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+        </button>
+        
+		<div class="collapse navbar-collapse " id="navbarSupportedContent">
+		    
+			  <ul class="navbar-nav ml-auto font-weight-light">
+				<li class="nav-item ">
+				  <a class="nav-link smooth-goto" href="admin.html">ADMIN</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link smooth-goto" href="admin_member.html">MEMBERSHIP</a>
+                </li>
+				<li class="nav-item ">
+				  <a class="nav-link smooth-goto" href="admin_message.html">MESSAGE</a>
+                </li>
+                
+			  </ul>
+		  
+        </div>
+        
+    </nav>
+    </section>
+
+   
+
+    <div class="space-100"></div>
+    <div class="container " >
+        <div class="h3">MEMBERSHIP REQUESTS</div>
+        <div class="table-responsive">
+            <table class="table">
+                
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">email</th>
+                    <th scope="col">phone</th>
+                    <th scope="col">company</th>
+                 
+                  </tr>
+                </thead>
+                <tbody id="tbody">
+                    <th></th> 
+                    <th>Loading...</th> 
+                    <th></th> 
+                </tbody>
+              </table>
+
+        </div>
+        
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-database.js"></script>
+    <script src="assets/js/admin_member.js"></script>
+    
+</body>
+</html>

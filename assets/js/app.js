@@ -15,6 +15,7 @@ firebase.initializeApp(firebaseConfig);
 var firestore = firebase.database();
 var docRef = firestore.ref("membership");
 var docRef_message = firestore.ref("messages");
+var docRef_activities= firestore.ref("activities");
 
 document
 .getElementById('form1')
@@ -102,3 +103,5 @@ function readData(){
         console.log("The read failed: " + errorObject.code);
       });
 }
+
+
