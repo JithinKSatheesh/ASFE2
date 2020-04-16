@@ -44,6 +44,8 @@ html{
     margin-top: 0px;
     /* overflow: hidden;
     height: 100%; */
+    margin-right: 0px;
+    margin-left: 0px;
 }
 
 body{
@@ -51,10 +53,22 @@ body{
     padding: 0px;
     /* height: 100%;
     overflow: auto; */
+    margin-right: 0px;
+    margin-left: 0px;
+    overflow-x: hidden;
 }
+
+body::-webkit-scrollbar {
+    display: none;
+  }
 
 .active{
     background-color: #f8c246;
+}
+
+.navbar{
+    margin-right: 0px;
+    margin-left: 0px;
 }
 
 .hero{
@@ -88,7 +102,13 @@ body{
 /* ====================== */
 
 @media screen and (max-width:767px){
+
+
     .fixed-top{
         position: relative;
+    }
+
+    .about-bg{
+        background-attachment:scroll;
     }
 }
