@@ -15,6 +15,8 @@ firebase.initializeApp(firebaseConfig);
 var firestore = firebase.database();
 var docRef_put = firestore.ref("activities");
 
+var storageRef = firebase.storage().ref();
+
 document
 .getElementById('form-putdata')
 .addEventListener('submit', formSubmit);
@@ -26,22 +28,38 @@ function formSubmit(e) {
 
             var title = document.getElementById("title").value;
             var content = document.getElementById("content").value;
-            var image = document.getElementById("image").value;
             var timestamp = Date();
-
-            docRef_put.push({
-                title : title,
-                content : content,
-                image : image,
-                timestamp : timestamp
-            }).then(function(){
-                console.log("Message saved");
-                readData();
-                
-            }).catch(function(error) {
-                console.log("Got an error: ", error);
-                
-            });
+            // file uploading 
+            var file =  document.querySelector('#uploadImg').files[0];
+            var file_name = (+new Date()) + '-' + file.name;
+            var metadata = {
+                contentType: file.type
+              };
+            console.log(file_name)
+            var task = storageRef.child(file_name).put(file, metadata);
+            task
+                .then(snapshot => snapshot.ref.getDownloadURL())
+                .then((url) => {
+                  console.log(url);
+                    //////////////////////
+                    // inserting data to 
+                    docRef_put.push({
+                        title : title,
+                        content : content,
+                        image : file_name,
+                        timestamp : timestamp
+                    }).then(function(){
+                        console.log("Message saved");
+                        readData();
+                        
+                    }).catch(function(error) {
+                        console.log("Got an error: ", error);
+                        
+                    });              
+                    /////////////////
+                })
+                .catch(console.error);
+            
 
 
 }
@@ -53,6 +71,7 @@ function formSubmit(e) {
 function readData(){
     docRef_put.on("value", function(snapshot) {
         document.getElementById("tbody").innerHTML = "" ;
+        document.getElementById("spinner-1").innerHTML = "";
         var i = 0;
         snapshot.forEach(function(childSnapshot) {
             i++;

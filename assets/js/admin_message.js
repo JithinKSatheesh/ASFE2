@@ -22,6 +22,7 @@ var docRef_get = firestore.ref("messages");
 function readData(){
     docRef_get.on("value", function(snapshot) {
         document.getElementById("tbody").innerHTML = "" ;
+        document.getElementById("spinner-1").innerHTML = "";
         var i = 0;
         snapshot.forEach(function(childSnapshot) {
             i++;

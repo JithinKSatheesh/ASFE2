@@ -16,6 +16,21 @@ var firestore = firebase.database();
 var docRef = firestore.ref("membership");
 var docRef_message = firestore.ref("messages");
 var docRef_activities= firestore.ref("activities");
+// storage of file
+var storageRef = firebase.storage().ref();
+var fileName = 'logo.jpg';
+
+var starsRef = storageRef.child(fileName);
+
+starsRef.getDownloadURL().then(function(url) {
+    return url
+  }).catch(function(error) {
+    
+    console.log("error in geting file");
+
+  });
+  
+
 
 document
 .getElementById('form1')
@@ -88,20 +103,44 @@ function formSubmitcontact(e) {
 
 }
 
+// populating activity
 
-function readData(){
-    docRef_message.on("value", function(snapshot) {
+function populate_activity(){
 
+    docRef_activities.on("value", function(snapshot) {
+
+        document.getElementById("spinner-1").innerHTML = "";
         snapshot.forEach(function(childSnapshot) {
-            var key = childSnapshot.key;
-            var childData = childSnapshot.val();              // childData will be the actual contents of the child
-            var name_val = childSnapshot.val().name;
-            console.log(name_val);
+            var title_val = childSnapshot.val().title;
+            var content_val = childSnapshot.val().content;
+            var image_val = childSnapshot.val().image;
+
+            var starsRef = storageRef.child(image_val);
+            starsRef.getDownloadURL().then(function(url) {
+                            var imageUrl =  url;
+                            var data = '<div class="col col-12 col-lg-4 mr-4"><div class="card" style="width: 18rem;"><img src="'+imageUrl+'" class="card-img-top" alt="..." class="space-holder"><div class="card-body"><h5 class="card-title">'+ title_val +'</h5><p class="card-text">'+ content_val +'</p></div></div></div> ';
+                            document.getElementById("activities_box").innerHTML += data;
+
+                        }).catch(function(error) {
+                            var dummyImage = 'assets/img/bg-1.png'; 
+                            var data = '<div class="col col-12 col-lg-4 mr-4"><div class="card" style="width: 18rem;"><img src="'+dummyImage+'" class="card-img-top" alt="..." class="space-holder"><div class="card-body"><h5 class="card-title">'+ title_val +'</h5><p class="card-text">'+ content_val +'</p></div></div></div> ';
+                            document.getElementById("activities_box").innerHTML += data;
+                            console.log("error in geting file");
+            
+                        });
+
+           
         })
 
       }, function (errorObject) {
         console.log("The read failed: " + errorObject.code);
       });
+
+
 }
+// calling function
+populate_activity();
+
+
 
 

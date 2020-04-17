@@ -31,7 +31,7 @@
 		    
 			  <ul class="navbar-nav ml-auto font-weight-light">
 				<li class="nav-item ">
-				  <a class="nav-link smooth-goto" href="admin.html">ADMIN</a>
+				  <a class="nav-link smooth-goto" href="admin_activities.html">ADMIN</a>
                 </li>
                 <li class="nav-item ">
                     <a class="nav-link smooth-goto" href="admin_member.html">MEMBERSHIP</a>
@@ -60,12 +60,14 @@
                         </div>
                         <div class="form-group">
                           <label for="content">content</label>
-                          <textarea type="text" class="form-control" id="content" required></textarea>
+                          <textarea type="text" class="form-control" id="content" required maxlength="160"></textarea>
                         </div>
+                       
                         <div class="form-group">
-                            <label for="image">image</label>
-                            <input type="text" class="form-control" id="image" required>
+                            <label for="file">Upload Image</label>
+                            <input  id="uploadImg" accept=".jpg" type="file" id="myfile" name="myfile">
                           </div>
+                        
                         <button type="submit" class="btn btn-dark">Insert an activity</button>
                       </form>
                         <div class="space-50"></div>
@@ -78,6 +80,12 @@
     <div class="space-100"></div>
     <div class="container">
         <div class="h4">Activities of ASFE </div>
+        <div class="row d-flex" id="spinner-1">
+          <div  class="spinner-border" role="status">
+              <span class="sr-only">Loading...</span>
+          </div>
+         &nbsp;&nbsp; Loading...
+        </div>
         <div class="tabel-responsive">
             <table class="table">
                 <thead>
@@ -91,7 +99,7 @@
                 </thead>
                 <tbody id="tbody">
                     <th></th> 
-                    <th>Loading...</th> 
+                    <th></th> 
                     <th></th> 
                 </tbody>
               </table>
@@ -104,7 +112,8 @@
     <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
     <!-- Add Firebase products that you want to use -->
     <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-database.js"></script>
-    <script src="assets/js/admin.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-storage.js"></script>
+    <script src="assets/js/admin_activities.js"></script>
     
 </body>
 </html>

@@ -79,10 +79,15 @@
                 <div class="col col-12"></div>
             </div>
             <div class="space-50"></div>
+            <div class="row d-flex justify-content-center" id="spinner-1">
+                <div  class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
             <div class="container-fluid">
-                <div class="row flex-nowrap" style="overflow-x: scroll;">
+                <div id="activities_box" class="row flex-nowrap card-group" style="overflow-x: scroll;" >
                     <!-- ---------------- -->
-                    <div class="col col-12 col-lg-4 mr-4">
+                    <!-- <div class="col col-12 col-lg-4 mr-4">
                             <div class="card" style="width: 18rem;">
                                 <img src="assets/img/bg-1.png" class="card-img-top" alt="..." class="space-holder">
                                 <div class="card-body">
@@ -91,59 +96,9 @@
                                 
                                 </div>
                             </div>
-                    </div> 
-                     <!-- ------------------- -->
-
-                      <!-- ---------------- -->
-                    <div class="col col-12 col-lg-4 mr-4">
-                        <div class="card" style="width: 18rem;">
-                            <img src="assets/img/bg-1.png" class="card-img-top" alt="..." class="space-holder">
-                            <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            
-                            </div>
-                        </div>
-                    </div> 
-                 <!-- ------------------- -->
-
-                  <!-- ---------------- -->
-                    <div class="col col-12 col-lg-4 mr-4">
-                        <div class="card" style="width: 18rem;">
-                            <img src="assets/img/bg-1.png" class="card-img-top" alt="..." class="space-holder">
-                            <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            
-                            </div>
-                        </div>
-                    </div> 
-                 <!-- ------------------- -->
-
-                 <!-- ---------------- -->
-                    <div class="col col-12 col-lg-4 mr-4">
-                        <div class="card" style="width: 18rem;">
-                            <img src="assets/img/bg-1.png" class="card-img-top" alt="..." class="space-holder">
-                            <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            
-                            </div>
-                        </div>
-                    </div> 
-                 <!-- ------------------- -->
-                    <!-- ---------------- -->
-                    <div class="col col-12 col-lg-4 mr-4">
-                        <div class="card" style="width: 18rem;">
-                            <img src="assets/img/bg-1.png" class="card-img-top" alt="..." class="space-holder">
-                            <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            
-                            </div>
-                        </div>
-                    </div> 
-                 <!-- ------------------- -->
+                    </div>  -->
+                    
+                    
                 </div>
             </div>
             <div class="row">
@@ -171,7 +126,7 @@
                         <div class="space-50"></div> 
                         <div class="container">
                             <div class="row">
-                                <div tabindex="0"  class="col col-12 col-md-4 col-lg-3 text-center service-box" data-html="true" data-toggle="popover" data-trigger="focus" data-placement="top" title="Process safety" 
+                                <div tabindex="0"  class="col col-12 col-md-4 col-lg-3 text-center service-box" data-html="true" data-toggle="popover" data-trigger="focus" data-placement="top" title="PROCESS SAFETY" 
                                          data-content=" 1.Process safety management Hazop  <br> 
                                                         2.QRA and other PHA studies  <br>
                                                         3. Fire safety  <br>  4. Functional Safety   <br>  
@@ -180,7 +135,7 @@
                                     <i class="fas fa-cogs"></i> <br>
                                     <span class="h6">PROCESS SAFETY</span> 
                                 </div>
-                                <div tabindex="0"  class="col col-12 col-md-4 col-lg-3 text-center service-box" data-html="true" data-toggle="popover" data-trigger="focus" data-placement="top" title="Construction safety" 
+                                <div tabindex="0"  class="col col-12 col-md-4 col-lg-3 text-center service-box" data-html="true" data-toggle="popover" data-trigger="focus" data-placement="top" title="CONSATRUCTION SAFETY" 
                                 data-content="  1.Construction Health,Safety and Environment audit  <br>
                                                 2. Construction safety training    <br>
                                                 3. Technical support services      <br>
@@ -407,6 +362,7 @@
     <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
                <!-- Add Firebase products that you want to use -->
     <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-storage.js"></script>
     <script src="assets/js/app.js"></script>
 </body>
 </html>
