@@ -18,6 +18,9 @@
     width: 100%;
     height: 100px;
 }
+.small_{
+    font-size: 0.7em;
+}
 
 .underline-yellow{
     text-decoration: underline;

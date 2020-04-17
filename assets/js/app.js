@@ -63,11 +63,13 @@ function formSubmit(e) {
                 timestamp : timestamp
             }).then(function(){
                 console.log("Message saved");
+                alert("Request send successfully.")
+                document.getElementById("form1").reset();
                 message1.innerHTML = '<div class="alert alert-success">Your request is registered. we will contact you soon.</div> ';
                 
             }).catch(function(error) {
                 console.log("Got an error: ", error);
-                message1.innerHTML = '<div class="Something went wrong. Please try again.</div> ';
+                message1.innerHTML = '<div class="Something went wrong!. Please try again.</div> ';
             });
 
 
@@ -93,6 +95,7 @@ function formSubmitcontact(e) {
         timestamp : timestamp
     }).then(function(){
         console.log("Message saved");
+        document.getElementById("form-contact").reset();
         messagebox.innerHTML = '<div class="alert alert-success">Your message have been sent.</div> ';
         
     }).catch(function(error) {

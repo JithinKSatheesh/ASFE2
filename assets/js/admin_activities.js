@@ -50,6 +50,8 @@ function formSubmit(e) {
                         timestamp : timestamp
                     }).then(function(){
                         console.log("Message saved");
+                        alert("Activity saved");
+                        document.getElementById("form-putdata").reset();
                         readData();
                         
                     }).catch(function(error) {
