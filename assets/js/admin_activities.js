@@ -36,6 +36,7 @@ function formSubmit(e) {
                 contentType: file.type
               };
             console.log(file_name)
+            document.getElementById("form-putdata").reset();
             var task = storageRef.child(file_name).put(file, metadata);
             task
                 .then(snapshot => snapshot.ref.getDownloadURL())
@@ -56,7 +57,7 @@ function formSubmit(e) {
                         
                     }).catch(function(error) {
                         console.log("Got an error: ", error);
-                        
+                        alert("Error in inserting data!");
                     });              
                     /////////////////
                 })
